@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stock index{% endblock %}
+
+{% block body %}
+    
+  {% include "components/sidebar.html.twig" %}
+ 
+ <div class="p-4 sm:ml-64">
+    <div class="p-4">
+       <div class=" gap-4 mb-4">
+             {% include "components/_search_data.html.twig" with {
+               form: form
+            } only %}
+       </div>
+
+       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
+             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                 <tr>
+                     <th scope="col" class="px-6 py-3">
+                         ID
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                         Nom du produit
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                         Prix unitaire
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                         Quantité
+                     </th>
+                     <th scope="col" class="px-6 py-3 flex items-center justify-center">
+                         Action
+                     </th>
+
+                 </tr>
+             </thead>
+             <tbody>
+               {% for stock in stocks %}
+                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                         {{stock.id}}
+                     </th>
+                     <td class="px-6 py-4">
+                        {{ stock.productname}}
+                     </td>
+                     <td class="px-6 py-4">
+                        {{ stock.prix}} €
+                     </td>
+                     <td class="px-6 py-4">
+                        {{ stock.quantity}}
+                     </td>
+                     <td class="px-6 py-4 flex items-center justify-center">
+                         <a href="{{ path('app_stock_edit', {'id': stock.id}) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Modifier</a> /
+                         <a <a href="{{ path('app_stock_delete', {'id': stock.id}) }}" class="font-medium text-red-600 dark:text-red-500 hover:underline" >Supprimer</a> 
+                     </td>
+                 </tr>
+                 {% endfor %}
+             </tbody>
+         </table>
+     </div>
+     
+       <div class="grid grid-cols-2 gap-4 mb-4">
+          
+
+       </div>
+       <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+          <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+       </div>
+       <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+             <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+             <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+             <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+             <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+{% endblock %}
