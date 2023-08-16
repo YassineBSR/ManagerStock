@@ -1,22 +1,22 @@
 {{ form_start(form) }}
-<div class="p-4">
+<div class="p-4 bg-teal-800">
   <div class="mb-6">
-    <label for="productname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom du produit</label>
-    {{ form_row(form.productname, { 'attr': {'class':'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'} }) }}
+    <label for="productname" class="block mb-2 text-sm font-medium  text-white">Nom du produit</label>
+    {{ form_row(form.productname, { 'attr': {'class':'border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 bg-teal-700 text-white'} }) }}
   </div>
   <div class="mb-6">
-    <label for="prix" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prix</label>
-    {{ form_row(form.prix, { 'attr': {'class':'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'} }) }}
+    <label for="prix" class="block mb-2 text-sm font-medium text-white">Prix</label>
+    {{ form_row(form.prix, { 'attr': {'class':'border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 bg-teal-700 text-white'} }) }}
 </div>
     <div class="mb-6">
-        <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantité</label>
-    {{ form_row(form.quantity, { 'attr': {'class':'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'} }) }}
+        <label for="quantity" class="block mb-2 text-sm font-medium text-white">Quantité</label>
+    {{ form_row(form.quantity, { 'attr': {'class':'border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 bg-teal-700 text-white'} }) }}
 </div>
     <div class="mb-6">
-        <label for="Description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-    {{ form_row(form.description, { 'attr': {'class':'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'} }) }}
+        <label for="Description" class="block mb-2 text-sm font-medium text-white">Description</label>
+    {{ form_row(form.description, { 'attr': {'class':'border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 bg-teal-700 text-white'} }) }}
 </div>
-    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{{ button_label|default('Save') }}</button>
+    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{{ button_label|default('Sauvegarder') }}</button>
 </div>
 
 {{ form_end(form) }}
