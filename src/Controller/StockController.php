@@ -12,10 +12,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/stock')]
+
 class StockController extends AbstractController
 {
-    #[Route('/', name: 'app_stock_index', methods: ['GET'])]
+    #[Route('/stock', name: 'app_stock_index', methods: ['GET'])]
     public function index(StockRepository $stockRepository, Request $request): Response
     {
         $searchData = new SearchData();
@@ -51,7 +51,7 @@ class StockController extends AbstractController
             return $this->redirectToRoute('app_stock_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('stock/new.html.twig', [
+        return $this->render('stock/new.html.twig', [
             'stock' => $stock,
             'form' => $form,
         ]);
